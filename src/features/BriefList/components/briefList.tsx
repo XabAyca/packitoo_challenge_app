@@ -1,3 +1,5 @@
+import { Card, CardContent, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getBriefs } from '../../../shared/api/apiManager';
@@ -37,19 +39,31 @@ export const BriefList = () => {
   }
 
   return (
-    <div>
+    <Box>
       {
         briefs.briefs && products.products &&
-        briefs.briefs.map((brief:Ibrief) => {
+        briefs.briefs.map((brief: Ibrief) => {
           return (
-            <div>
-              <p>{brief.title}</p>
-              <p>{brief.comment}</p>
-              <p>{getProductName(brief.productId)}</p>
-            </div>
-          )
+            <Card sx={{ minWidth: 275, margin:'20px' }}>
+              <CardContent>
+                <Typography
+                  sx={{ fontSize: 14 }}
+                  color="text.secondary"
+                  gutterBottom
+                >
+                  {brief.title}
+                </Typography>
+                <Typography variant="h5" component="div">
+                  {brief.comment}
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  {getProductName(brief.productId)}
+                </Typography>
+              </CardContent>
+            </Card>
+          );
         })
       }
-    </div>
-  )
+    </Box>
+  );
 }
