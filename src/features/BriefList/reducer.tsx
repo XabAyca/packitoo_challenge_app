@@ -17,7 +17,7 @@ const initialState: InitialState = {
   loading: false,
 };
 
-export const fetchBriefReducer = (
+export const fetchBriefsReducer = (
   state: Object = initialState,
   action: Action
 ) => {
@@ -30,5 +30,8 @@ export const fetchBriefReducer = (
 
     case FETCH_BRIEF_FAILURE:
       return { ...state, loading: false, error: action.error };
+
+    default:
+      return state;
   }
 };

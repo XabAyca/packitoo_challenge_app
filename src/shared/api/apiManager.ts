@@ -1,7 +1,7 @@
 
 import { addBriefFailure, addBriefRequest, addBriefSuccess, fetchProductFailure, fetchProductsRequest } from '../../features/BriefForm/actionCreators';
 import { fetchBriefsRequest, fetchBriefsFailure, fetchBriefsSuccess } from '../../features/BriefList/actionCreators';
-import dispatch, { Dispatch } from 'react'
+import { Dispatch } from 'react'
 
 const baseUrl:string = "http://localhost:3000/"
 

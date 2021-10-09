@@ -1,9 +1,11 @@
 import { BriefForm } from './features/BriefForm/components/briefForm';
+import { BriefList } from './features/BriefList/components/briefList';
 
 function App() {
   return (
-    <div className="App">
-      <BriefForm/>
+    <div>
+      <BriefForm />
+      <BriefList/>
     </div>
   );
 }

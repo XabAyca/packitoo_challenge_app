@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts, addBrief } from '../../../shared/api/apiManager';
 import { RootState } from '../../../shared/store';
