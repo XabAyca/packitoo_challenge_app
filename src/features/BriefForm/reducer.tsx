@@ -1,3 +1,4 @@
+import { FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE } from '../../shared/constants/ActionTypes';
 import {
   ADD_BRIEF_REQUEST,
   ADD_BRIEF_SUCCESS,
@@ -6,14 +7,16 @@ import {
 
 type InitialState = {
   loading: boolean;
-  brief?: Object;
+  brief?: object;
   error?: any[];
+  products?: object[]
 };
 
 type Action = {
   type: String;
-  brief?: Object;
+  brief?: object;
   error?: any[];
+  products?: object[]
 };
 
 const initialState: InitialState = {
@@ -21,7 +24,7 @@ const initialState: InitialState = {
 };
 
 export const addBriefReducer = (
-  state: Object = initialState,
+  state: object = initialState,
   action: Action
 ) => {
   switch (action.type) {
@@ -33,5 +36,37 @@ export const addBriefReducer = (
 
     case ADD_BRIEF_FAILURE:
       return { ...state, loading: false, error: action.error };
+    
+    case FETCH_PRODUCTS_REQUEST:
+      return {...state, loading: true}
+    
+    case FETCH_PRODUCTS_SUCCESS:
+      return {...state, loading: false, products:action.products}
+
+    case FETCH_PRODUCTS_FAILURE:
+      return {...state, loading: false, products:action.error}
+    
+    default:
+      return state;
+  }
+};
+
+export const getProductsReducer = (
+  state: object = initialState,
+  action: Action
+) => {
+  switch (action.type) {
+
+    case FETCH_PRODUCTS_REQUEST:
+      return { ...state, loading: true };
+
+    case FETCH_PRODUCTS_SUCCESS:
+      return { ...state, loading: false, products: action.products };
+
+    case FETCH_PRODUCTS_FAILURE:
+      return { ...state, loading: false, products: action.error };
+
+    default:
+      return state;
   }
 };

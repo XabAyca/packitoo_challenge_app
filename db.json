@@ -14,9 +14,21 @@
     }
   ],
   "products": [
-    { "id": 1, "name": "Bag Box" },
-    { "id": 2, "name": "Oval Box" },
-    { "id": 3, "name": "Round Box" },
-    { "id": 4, "name": "Other Box" }
+    {
+      "id": 1,
+      "name": "Bag Box"
+    },
+    {
+      "id": 2,
+      "name": "Oval Box"
+    },
+    {
+      "id": 3,
+      "name": "Round Box"
+    },
+    {
+      "id": 4,
+      "name": "Other Box"
+    }
   ]
 }

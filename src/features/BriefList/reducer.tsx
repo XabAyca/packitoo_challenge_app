@@ -1,4 +1,4 @@
-import { FECTH_BRIEF_REQUEST, FECTH_BRIEF_SUCCESS, FECTH_BRIEF_FAILURE } from '../../shared/constants/ActionTypes';
+import { FETCH_BRIEF_REQUEST, FETCH_BRIEF_SUCCESS, FETCH_BRIEF_FAILURE } from '../../shared/constants/ActionTypes';
 
 
 type InitialState = {
@@ -22,13 +22,13 @@ export const fetchBriefReducer = (
   action: Action
 ) => {
   switch (action.type) {
-    case FECTH_BRIEF_REQUEST:
+    case FETCH_BRIEF_REQUEST:
       return { ...state, loading: true };
 
-    case FECTH_BRIEF_SUCCESS:
+    case FETCH_BRIEF_SUCCESS:
       return { ...state, loading: false, briefs: action.briefs };
 
-    case FECTH_BRIEF_FAILURE:
+    case FETCH_BRIEF_FAILURE:
       return { ...state, loading: false, error: action.error };
   }
 };

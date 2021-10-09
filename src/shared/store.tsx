@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
-import { addBriefReducer } from "../features/BriefForm/reducer";
+import { addBriefReducer, getProductsReducer } from '../features/BriefForm/reducer';
 
 declare global {
   interface Window {
@@ -11,7 +11,8 @@ declare global {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducers = combineReducers({
-  addBrief:addBriefReducer,
+  addBrief: addBriefReducer,
+  getProducts: getProductsReducer
 });
 
 export const store = createStore(
@@ -21,3 +22,5 @@ export const store = createStore(
     composeEnhancers()
   )
 );
+
+export type RootState = ReturnType<typeof store.getState>;
