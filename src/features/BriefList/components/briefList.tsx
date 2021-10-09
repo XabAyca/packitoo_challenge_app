@@ -1,6 +1,7 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Skeleton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect } from "react"
+import Loader from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux"
 import { getBriefs } from '../../../shared/api/apiManager';
 import { RootState } from '../../../shared/store';
@@ -28,9 +29,12 @@ export const BriefList = () => {
     id: number;
   }
 
+  // Use setTimeOut to see the loader
   useEffect(() => {
-    dispatch(getBriefs())
-  }, [brief])
+    setTimeout(() => {
+      dispatch(getBriefs());
+    }, 1000)
+  }, [brief]);
 
   const getProductName = (id: string): string => {
     return products.products.filter(
@@ -39,12 +43,12 @@ export const BriefList = () => {
   }
 
   return (
-    <Box>
-      {
-        briefs.briefs && products.products &&
+    <Box
+      sx={{ display: "flex", justifyContent: 'space-around', flexFlow: 'row wrap' }}>
+      {briefs.briefs && products.products ? (
         briefs.briefs.map((brief: Ibrief) => {
           return (
-            <Card sx={{ minWidth: 275, margin:'20px' }}>
+            <Card sx={{ width: 275, margin: "20px" }}>
               <CardContent>
                 <Typography
                   sx={{ fontSize: 14 }}
@@ -63,7 +67,15 @@ export const BriefList = () => {
             </Card>
           );
         })
-      }
+      ) : (
+        <Loader
+          type="TailSpin"
+          color="#00BFFF"
+          height={100}
+          width={100}
+          timeout={3000}
+        />
+      )}
     </Box>
   );
 }
