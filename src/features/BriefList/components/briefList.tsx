@@ -5,31 +5,15 @@ import Loader from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux"
 import { getBriefs } from '../../../shared/api/apiManager';
 import { RootState } from '../../../shared/store';
+import { Iproduct, Ibriefs, Ibrief, Iproducts } from '../../../shared/constants/interface';
 
 export const BriefList = () => {
   const dispatch = useDispatch()
   const [filter, setFilter] = useState(0)
   const [filteredB, setFilteredB]= useState([]);
   const briefs: Ibriefs | any = useSelector((state: RootState) => state.briefs)
-  const products: any = useSelector((state: RootState) => state.getProducts);
-  const brief: any = useSelector((state: RootState) => state.addBrief)
-  
-  interface Ibrief{
-    id: number;
-    title: string;
-    comment: string;
-    productId: number;
-  }
-
-  interface Ibriefs{
-    loading: boolean;
-    briefs:Ibrief
-  }
-
-  interface Iproduct{
-    name: string;
-    id: number;
-  }
+  const products: Iproducts | any= useSelector((state: RootState) => state.getProducts);
+  const brief: Ibrief | any = useSelector((state: RootState) => state.addBrief)
 
   // Use setTimeOut to see the loader
   useEffect(() => {

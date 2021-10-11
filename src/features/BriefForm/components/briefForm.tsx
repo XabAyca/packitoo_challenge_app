@@ -4,22 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProducts, addBrief } from '../../../shared/api/apiManager';
 import { RootState } from '../../../shared/store';
 import { Box } from '@mui/system';
+import { Iproduct, Iproducts } from '../../../shared/constants/interface';
 
 export const BriefForm = () => {
   const [title, setTitle] = useState<string>("")
   const [comment, setComment] = useState<string>("")
   const [productId, setProductId] = useState<string>("")
   const dispatch = useDispatch()
-  const products: any = useSelector((state: RootState) => state.getProducts)
+  const products: Iproducts | any = useSelector((state: RootState) => state.getProducts)
 
   useEffect(() => {
     dispatch(getProducts());
   }, [])
-  
-  interface Iproduct{
-    id: number;
-    name: string;
-  }
 
   const createBrief = (e:ChangeEvent) => {
     e.preventDefault()
