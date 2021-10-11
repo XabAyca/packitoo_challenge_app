@@ -9,3 +9,9 @@ export const FETCH_BRIEF_FAILURE = "FETCH_BRIEF_FAILURE";
 export const FETCH_PRODUCTS_REQUEST = "FETCH_PRODUCTS_REQUEST";
 export const FETCH_PRODUCTS_SUCCESS = "FETCH_PRODUCTS_SUCCESS";
 export const FETCH_PRODUCTS_FAILURE = "FETCH_PRODUCTS_FAILURE";
+
+export const FILTER_PRODUCT = "FILTER_PRODUCT";
+export const BAG_BOX = "Bag Box";
+export const OVAL_BOX = "Oval Box";
+export const ROUND_BOX = "Round Box";
+export const OTHER_BOX = "Other Box";

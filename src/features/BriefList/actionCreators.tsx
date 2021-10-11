@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { FETCH_BRIEF_FAILURE, FETCH_BRIEF_SUCCESS, FETCH_BRIEF_REQUEST } from '../../shared/constants/ActionTypes';
+import { FETCH_BRIEF_FAILURE, FETCH_BRIEF_SUCCESS, FETCH_BRIEF_REQUEST, FILTER_PRODUCT } from '../../shared/constants/ActionTypes';
 
 export const fetchBriefsRequest = () => {
   return (dispatch: Dispatch) => {
@@ -23,6 +23,15 @@ export const fetchBriefsSuccess = (briefs:any[]) => {
     dispatch({
       type: FETCH_BRIEF_SUCCESS,
       briefs:briefs
+    })
+  }
+}
+
+export const saveFilterKey = (filterKey: string) => {
+  return (dispatch: Dispatch) => {
+    dispatch({
+      type: FILTER_PRODUCT,
+      filterKey:filterKey
     })
   }
 }

@@ -13,40 +13,22 @@
       "productId": 1
     },
     {
-      "title": "sdg",
-      "comment": "gerg",
-      "productId": "3",
+      "title": "test",
+      "comment": "test",
+      "productId": 2,
       "id": 3
     },
     {
-      "title": "fvg",
-      "comment": "fezf",
-      "productId": "2",
+      "title": "test2",
+      "comment": "test",
+      "productId": 2,
       "id": 4
     },
     {
-      "title": "fhfth",
-      "comment": "rthrth",
-      "productId": "2",
-      "id": 5
-    },
-    {
-      "title": "sqss",
-      "comment": "ssdsd",
-      "productId": 2,
-      "id": 6
-    },
-    {
-      "title": "coucou",
-      "comment": "gytiyui",
+      "title": "test2",
+      "comment": "test",
       "productId": 4,
-      "id": 7
-    },
-    {
-      "title": "ipçip",
-      "comment": "çàpçàpçàp",
-      "productId": 3,
-      "id": 8
+      "id": 5
     }
   ],
   "products": [
